@@ -5,7 +5,7 @@ using namespace std;
  int x ;
  float y;
  char z;
- struct node *next;  // self refefarencial pointer
+ struct node *next;  // self refefarencial pointer creation
  };
  typedef struct node head;
  int main()
