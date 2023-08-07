@@ -38,45 +38,6 @@ int main()
     cout << n3->data << endl;
 
     cout << n4->data << endl;
+    return 0;
 }
 
-// C Full code
-
-#include<stdio.h> 
-#include<stdlib.h> 
-struct node{ 
-    int m; 
-    struct node *n; 
- 
-}*head; 
-typedef struct node node; 
-int main() 
-{ 
-    node *n1 , *n2 , *n3 ,*n4; 
- 
-    n1 =(node*)malloc(sizeof(node)); 
-    n2 =(node*)malloc(sizeof(node)); 
-    n3 =(node*)malloc(sizeof(node)); 
-    n4 =(node*)malloc(sizeof(node)); 
- 
-    n1->m =12; 
-    n1->n = n2; 
- 
-    n2->m =22; 
-    n2->n =n3; 
- 
- 
-    n3->m =25; 
-    n3->n =n4; 
- 
- 
-    n4->m =30; 
-    n4->n =NULL; 
- 
-    printf(" Link list Create successfully !!\n"); 
-    printf("%d ",n1->m); 
-    printf("%d ",n2->m); 
-    printf("%d ",n3->m); 
-    printf("%d ",n4->m); 
-    return 0; 
-}
