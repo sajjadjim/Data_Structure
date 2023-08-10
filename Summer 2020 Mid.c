@@ -7,8 +7,7 @@ struct node{
 typedef struct node node;
 
 int main()
-{
-    node *Head , *Second , *Third ,*Fourth ,*Fifth;
+{  node *Head , *Second , *Third ,*Fourth ,*Fifth;
 
     Head =(node*)malloc(sizeof(node));
     Second =(node*)malloc(sizeof(node));
@@ -37,7 +36,6 @@ int main()
         printf("%d-> ",value->data);
         value =value->next;
     }
-
     return 0;
 }
 
