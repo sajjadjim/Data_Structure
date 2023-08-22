@@ -8,7 +8,6 @@ typedef struct node nodal;
 
 void createnode(int n);
 void displayList();
-
 int main()
 {
     int n;
