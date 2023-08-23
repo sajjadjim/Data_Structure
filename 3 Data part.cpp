@@ -1,6 +1,7 @@
 #include<iostream>
 #include<stdlib.h>
 using namespace std;
+
  struct node {
  int x ;
  float y;
@@ -8,6 +9,7 @@ using namespace std;
  struct node *next;  // self refefarencial pointer creation
  };
  typedef struct node head;
+
  int main()
 {
   head *node1 , * node2;
