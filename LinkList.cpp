@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 struct student {
     int data;
     struct student *next; // Use student* instead of struct node*
