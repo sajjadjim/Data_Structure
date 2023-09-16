@@ -1,5 +1,6 @@
 #include<iostream>
 #include<stdlib.h>
+
 using namespace std;
 struct node{
 struct node *prev;
