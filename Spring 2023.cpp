@@ -8,6 +8,7 @@ char data;
 struct node *next;
 };
 typedef struct node head;
+
 int main()
 {
     node *n1 , *n2 , *n3 ,*n4;
