@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+
 int main()
 {   // Array
     int x[5] ={10,20,30,40,50};
