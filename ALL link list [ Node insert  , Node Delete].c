@@ -7,6 +7,7 @@ struct node {
 };
 
 typedef struct node node;
+
 node *head;
 void createnode(int n);
 void display();
