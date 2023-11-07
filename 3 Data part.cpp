@@ -3,8 +3,8 @@
 
 using namespace std;
 
- struct node {
-
+ struct node 
+{
  int x ;
  float y;
  char z;
