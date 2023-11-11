@@ -17,6 +17,7 @@ int main()
 
     a = 20;
     cout << *p<< endl << endl;
+ 
     // Array
     int x[5] ={10,20,30,40,50};
     int *p;
