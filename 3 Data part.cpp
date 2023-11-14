@@ -9,7 +9,7 @@ using namespace std;
  float y;
  char z;
 
- struct node *next;  // self refefarencial pointer creation
+ struct node *next;   // self refefarencial pointer creation
  };
  typedef struct node head;
 
