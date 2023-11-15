@@ -8,7 +8,7 @@ struct node{
 }*head;
 typedef struct node nodal;
 
-void createnode(int n);
+void createnode (int n);
 void displayList();
 int main()
 {
