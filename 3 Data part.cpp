@@ -16,8 +16,8 @@ using namespace std;
  int main()
 {
   head *node1 , * node2;
-  node1 =(head*)malloc(sizeof(head));   // Memory Address create
-  node2 =(head*)malloc(sizeof(head));   // Memory Address create
+  node1 =(head*)malloc(sizeof(head));    // Memory Address create
+  node2 =(head*)malloc(sizeof(head));    // Memory Address create
   node1-> x =6;
   node1->y =64.99;
   node1->z = 'Aim';
