@@ -4,7 +4,6 @@
 
 
 ///**************QUEUE**********//////////
-
 typedef struct NodE {
     char* data;
     struct NodE* next,*prev;
@@ -23,7 +22,7 @@ void initializeQueue(Queue* queue) {
 int isEmptyQ(Queue* queue) {
     return queue->front == NULL;
 }
-int QSize(Queue* queue) {
+int QSize(Queue* queue) {    //Queue Size Count
     int size = 0;
     NodE* current = queue->front;
 
@@ -41,24 +40,24 @@ const char* dequeue(Queue* queue) {
         printf("There is nothing in history.\n");
         exit(1);
     }
-    
-    NodE* temp = queue->front;
+
+    NodE* temp = queue->front;     //page deletion simple deque
     char* data = temp->data;
     queue->front = queue->front->next;
     queue->front->prev = NULL;
     free(temp);
-    
+
     if (queue->front == NULL) {
         queue->rear = NULL; // Queue is empty
     }
-    
+
     return data;
 }
 
 NodE *prevTemp=NULL;
 void enqueue(Queue* queue,const char* data) {
     // printf("Q::%d",QSize(queue));
-    if(QSize(queue)==5){             //Queue checked dequeue
+    if(QSize(queue)==5){             //history overflow check
         dequeue(queue);
     }
     NodE* newNode = (NodE*)malloc(sizeof(NodE));
@@ -66,12 +65,12 @@ void enqueue(Queue* queue,const char* data) {
         dequeue(queue);
         NodE* newNode = (NodE*)malloc(sizeof(NodE));
     }
-    
+
     newNode->data =  strdup(data);
     newNode->next = NULL;
     newNode->prev=prevTemp;
-    
-    if (isEmptyQ(queue)) {
+
+    if (isEmptyQ(queue)) {  //check empty or not
         queue->front = queue->rear = newNode;
     } else {
         queue->rear->next = newNode;
@@ -87,11 +86,11 @@ const char* front(Queue* queue) {
         printf("Queue is empty. Front operation failed.\n");
         exit(1);
     }
-    
+
     return queue->front->data;
 }
 
-void displayReverseQueue(Queue* queue) {
+void displayReverseQueue(Queue* queue) { // OUTPUT HISTORY HERE
     if (isEmptyQ(queue)) {
         printf("There in no history.\n");
         return;
@@ -127,14 +126,14 @@ Stack* createNode(const char* data) {
 }
 
 
-void push(Stack** top, const char* data) {
+void push(Stack** top, const char* data) {//double pointer for top inside stack pointer
     Stack* newNode = createNode(data);
     newNode->next = *top;
     *top = newNode;
 }
 
 
-char* pop(Stack** top) {
+char* pop(Stack** top) {     //double pointer for top inside stack pointer
     if (*top == NULL) {
         return NULL;
     }
@@ -153,7 +152,7 @@ int isEmpty(Stack* top) {
 //**********STACK END***************//
 
 int main() {
-    
+
         Stack* stk = NULL;  // Stack for visited addresses
         Stack* stk_back = NULL;  // Stack for addresses to go back
         Queue historyQ;
@@ -176,6 +175,7 @@ int main() {
                 getchar();  // Consume the whitespace
                 char addrs[1024];
                 fgets(addrs, sizeof(addrs), stdin);
+
                 addrs[strcspn(addrs, "\n")] = '\0';  // Removing  newline
                 push(&stk,addrs);
                 enqueue(&historyQ,addrs);
@@ -193,7 +193,7 @@ int main() {
                     printf("%s\n\n", stk->data);
                     enqueue(&historyQ,stk->data);
                 }
-            } 
+            }
             else if (strcmp(cmnd, "FORWARD") == 0) {
                 if (isEmpty(stk_back)) {
                     printf("Ignored\n");
@@ -207,14 +207,14 @@ int main() {
             }
         }
 
-        
+
         // while (!isEmpty(stk)) {
         //     pop(&stk);
         // }
         // while (!isEmpty(stk_back)) {
         //     pop(&stk_back);
         // }
-    
+
 
     return 0;
 }
