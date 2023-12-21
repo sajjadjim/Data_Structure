@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-
+  
 struct node {
     int StudentID;
     float Marks;
